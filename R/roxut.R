@@ -29,10 +29,6 @@
 #'
 #' @author Bryan A. Hanson, adapted and modified from `roxygen2::roxygenize()`
 #' @export
-#' @importFrom roxygen2 parse_package roclet_preprocess roclet_find
-#' @importFrom roxygen2 roclet_process roclet_clean
-#' @importFrom purrr walk map2
-#' @importFrom desc desc_get
 #' 
 roxut <- function(package.dir = ".",
                   load_code = NULL,

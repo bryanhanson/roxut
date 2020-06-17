@@ -15,6 +15,8 @@
 #'
 #' Maintainer: Bryan A. Hanson \email{hanson@@depauw.edu}
 #'
-#' @keywords package 
+#' @keywords package
+#'
+#' @import roxygen2
 #'
 NULL

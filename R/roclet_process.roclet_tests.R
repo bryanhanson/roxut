@@ -14,7 +14,6 @@
 #' @author Bryan A. Hanson
 #'
 #' @export
-#' @importFrom roxygen2 block_get_tags roclet_process
 #' 
 roclet_process.roclet_tests <- function(x, blocks, env, base_path) {
   results <- list()

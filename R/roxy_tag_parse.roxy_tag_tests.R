@@ -16,7 +16,6 @@
 #' @author Bryan A. Hanson
 #'
 #' @export
-#' @importFrom roxygen2 roxy_tag_warning roxy_tag_parse
 #'
 roxy_tag_parse.roxy_tag_tests <- function(x) {
   valid_frameworks <- "(testthat|tinytest)"

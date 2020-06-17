@@ -9,7 +9,6 @@
 #'
 #' @author Bryan A. Hanson
 #' @export
-#' @importFrom roxygen2 roclet roclet_output roc_proc_text
 #'
 
 tests_roclet <- function() {
