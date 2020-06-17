@@ -2,7 +2,7 @@
 % Please edit documentation in R/roclet_process.roclet_tests.R
 \name{roclet_process.roclet_tests}
 \alias{roclet_process.roclet_tests}
-\title{Roclet to Process @tests Tags}
+\title{Process @tests Tags}
 \usage{
 \method{roclet_process}{roclet_tests}(x, blocks, env, base_path)
 }
@@ -19,7 +19,7 @@
 A list containing XXX.
 }
 \description{
-Roclet to Process @tests Tags
+Process @tests Tags
 }
 \author{
 Bryan A. Hanson

@@ -1,5 +1,5 @@
 #'
-#' Parser for @tests Tags
+#' Parse @tests Tags
 #'
 #' The `roxygen2` infrastructure is used to parse the `@tests` tags.
 #' This function is called once for each tag in a `*.R` file.

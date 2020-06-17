@@ -1,5 +1,5 @@
 #'
-#' Roclet to Write the Results of Processing @tests Tags to Unit Test File
+#' Write the Results of Processing @tests Tags to Unit Test File
 #'
 #' @param x A `roclet` object.
 #'
@@ -19,12 +19,19 @@
 
 roclet_output.roclet_tests <- function(x, results, base_path, ...) {
 
+  # helper function
+  writeUT <- function(tests, con) {
+    tests <- c("# File created by roxut; edit the function definition file, not this file\n", tests)
+    writeLines(tests, con, sep = "") # \n already present
+    message("Writing ", con)
+  }
+
   for (framework in names(results)) {
 
     # extract the original short filename
     fn <- sub("\\[.*/(.*)\\.R:[0-9]+\\].*", "\\1", results[[framework]])
 
-    # ensure fn is length 1
+    # ensure filename is unique
     fn <- unique(fn)
     if (length(fn) > 1) stop("More than one file name is present")
 
@@ -37,24 +44,22 @@ roclet_output.roclet_tests <- function(x, results, base_path, ...) {
     if (framework == "tinytest") {
 
       # create output filename
-      out_name <- paste("inst/tinytest/test_", fn, ".R", sep = "")
+      out_file <- paste("inst/tinytest/test_", fn, ".R", sep = "")
  
-     # create any needed directories
+      # create any needed directories
       need_inst_dir <- !dir.exists(file.path("inst"))
       if (need_inst_dir) dir.create("inst")
       need_tt_dir <- !dir.exists(file.path("inst/tinytest"))
       if (need_tt_dir) dir.create("inst/tinytest")
 
       # write to file and close
-      tests <- c("# File created by roxut; edit the function definition file, not this file\n", tests)
-      # the line above also used by roclet_clean
-      writeLines(tests, con = out_name, sep = "")
+      writeUT(tests, out_file)
     }
 
     if (framework == "testthat") {
 
       # create output filename
-      out_name <- paste("tests/testthat/test_", fn, ".R", sep = "")
+      out_file <- paste("tests/testthat/test_", fn, ".R", sep = "")
  
      # create any needed directories
       need_inst_dir <- !dir.exists(file.path("tests"))
@@ -63,9 +68,7 @@ roclet_output.roclet_tests <- function(x, results, base_path, ...) {
       if (need_tt_dir) dir.create("tests/testthat")
 
       # write to file and close
-      tests <- c("# File created by roxut; edit the function definition file, not this file\n", tests)
-      # the line above also used by roclet_clean
-      writeLines(tests, con = out_name, sep = "")
+      writeUT(tests, out_file)
     }
   }
 

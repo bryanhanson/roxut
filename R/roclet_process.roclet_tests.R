@@ -1,5 +1,5 @@
 #'
-#' Roclet to Process @tests Tags
+#' Process @tests Tags
 #'
 #' @param x A `roclet` object.
 #'
@@ -27,9 +27,6 @@ roclet_process.roclet_tests <- function(x, blocks, env, base_path) {
       results[[tag$val$framework]] <- c(results[[tag$val$framework]], msg)
     }
   }
-  
-  # str(results)
-
   results
 }
 

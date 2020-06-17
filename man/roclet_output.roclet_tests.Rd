@@ -2,7 +2,7 @@
 % Please edit documentation in R/roclet_output.roclet_tests.R
 \name{roclet_output.roclet_tests}
 \alias{roclet_output.roclet_tests}
-\title{Roclet to Write the Results of Processing @tests Tags to Unit Test File}
+\title{Write the Results of Processing @tests Tags to Unit Test File}
 \usage{
 \method{roclet_output}{roclet_tests}(x, results, base_path, ...)
 }
@@ -20,7 +20,7 @@ does not appear to be used.}
 `NULL`
 }
 \description{
-Roclet to Write the Results of Processing @tests Tags to Unit Test File
+Write the Results of Processing @tests Tags to Unit Test File
 }
 \author{
 Bryan A. Hanson

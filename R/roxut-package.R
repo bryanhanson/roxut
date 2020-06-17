@@ -5,7 +5,7 @@
 #' as the function itself, `roxut` allows one to write the unit tests
 #' in the same file as the function.  Once processed, the unit tests are
 #' moved to the appropriate directory.  Currently supports `testthat` and
-#' `tinytest` frameworks.  Builds heavily off the `roxygen2` system.
+#' `tinytest` frameworks.  The `roxygen2` package provides much of the infrastructure.
 #'
 #' @name roxut-package
 #'

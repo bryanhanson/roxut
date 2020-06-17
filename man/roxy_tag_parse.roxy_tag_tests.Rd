@@ -2,7 +2,7 @@
 % Please edit documentation in R/roxy_tag_parse.roxy_tag_tests.R
 \name{roxy_tag_parse.roxy_tag_tests}
 \alias{roxy_tag_parse.roxy_tag_tests}
-\title{Parser for @tests Tags}
+\title{Parse @tests Tags}
 \usage{
 \method{roxy_tag_parse}{roxy_tag_tests}(x)
 }
