@@ -1,7 +1,7 @@
 Package: roxut
 Type: Package
 Title: Document Unit Tests Roxygen-Style
-Version: 0.1.50
+Version: 0.1.53
 Date: 2020-06-17
 Authors@R: c(
       person("Bryan A.", "Hanson",
@@ -27,7 +27,7 @@ Authors@R: c(
       person(given = "RStudio",
              role = "cph",
              comment = "roxygen2 code"))
-Description: Much as 'roxygen2' allows one to document functions in the same file as the function itself, 'roxut'  allows one to write the unit tests in the same file as the function.  Once processed, the unit tests are moved to the appropriate directory.  Currently supports 'testthat' and 'tinytest' frameworks. The `roxygen2` package provides much of the infrastructure.
+Description: Much as 'roxygen2' allows one to document functions in the same file as the function itself, 'roxut'  allows one to write the unit tests in the same file as the function.  Once processed, the unit tests are moved to the appropriate directory.  Currently supports 'testthat' and 'tinytest' frameworks. The 'roxygen2' package provides much of the infrastructure.
 License: GPL-3
 Encoding: UTF-8
 Depends:
