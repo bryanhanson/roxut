@@ -2,7 +2,7 @@
 
 ## What is `roxut`?
 
-Much as 'roxygen2' allows one to document functions in the same file as the function itself, 'roxut'  allows one to write the unit tests in the same file as the function.  Once processed, the unit tests are moved to the appropriate directory.  Currently supports 'testthat' and 'tinytest' frameworks.  Relies on and extends the 'roxygen2' system.
+Much as `roxygen2` allows one to document functions in the same file as the function itself, `roxut`  allows one to write the unit tests in the same file as the function.  Once processed, the unit tests are moved to the appropriate directory.  Currently supports `testthat` and `tinytest` frameworks.  Relies on and extends the `roxygen2` system.
 
 ### Installing `roxut` from Github:
 
@@ -18,7 +18,7 @@ If you use `@some_other_branch` you can download other branches that might be av
 
 ### Developers/Contributors/Testers
 
-If you set your working directory to the top level of your local copy of the repository, you can run `make` to build, check and install the package.  `tinytest` is used to perform unit tests of `roxut`.  In this case, there is a test package at `roxut/roxut/inst/tinytest/roxutTestPkg`.  When `roxut` is checked, this test package is used for testing `roxut`, and it is also built, checked and installed to verify everything worked.
+`tinytest` is used to perform unit tests of `roxut`.  In this case, there is a test package at `roxut/roxut/inst/tinytest/roxutTestPkg`.  When `roxut` is checked, this test package is used for testing `roxut`, and it is also built, checked and installed to verify everything worked.
 
 ### License Information
 
