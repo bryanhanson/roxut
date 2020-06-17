@@ -1,0 +1,6 @@
+README.md
+Rbuildignore.txt
+gitignore.txt
+.Rhistory
+inst/tinytest/roxutTestPkg/.Rbuildignore
+inst/tinytest/roxutTestPkg/Rbuildignore.txt

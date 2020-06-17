@@ -1,0 +1,18 @@
+Package: roxutTestPkg
+Type: Package
+Title: Simple Package for Testing roxut Package
+Version: 0.1
+Date: 2020-05-29
+Authors@R: c(
+    person("Bryan A.", "Hanson",
+           role = c("aut", "cre"),
+           email = "hanson@depauw.edu",
+           comment = c(ORCID = "0000-0003-3536-8246"))
+           )
+Description: Provides testing infrastructure for the 'roxut' package.  Includes tests for proper functioning with `tinytest` and `testthat` frameworks.
+License: GPL-3
+Encoding: UTF-8
+Suggests:
+  tinytest,
+  testthat
+RoxygenNote: 7.1.0
