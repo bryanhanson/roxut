@@ -16,10 +16,10 @@
 #' @author Bryan A. Hanson
 #'
 #' @export
-#' 
+#'
 roclet_process.roclet_tests <- function(x, blocks, env, base_path) {
   results <- list()
-  
+
   for (block in blocks) {
     tags <- block_get_tags(block, "tests")
 
@@ -30,5 +30,3 @@ roclet_process.roclet_tests <- function(x, blocks, env, base_path) {
   }
   results
 }
-
-

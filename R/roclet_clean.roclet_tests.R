@@ -30,5 +30,3 @@ roclet_clean.roclet_tests <- function(x, base_path) {
   }
   unlink(na.omit(remove))
 }
-
-

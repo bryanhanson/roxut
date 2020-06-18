@@ -49,7 +49,7 @@ roclet_output.roclet_tests <- function(x, results, base_path, ...) {
 
       # create output filename
       out_file <- paste("inst/tinytest/test_", fn, ".R", sep = "")
- 
+
       # create any needed directories
       need_inst_dir <- !dir.exists(file.path("inst"))
       if (need_inst_dir) dir.create("inst")
@@ -64,8 +64,8 @@ roclet_output.roclet_tests <- function(x, results, base_path, ...) {
 
       # create output filename
       out_file <- paste("tests/testthat/test_", fn, ".R", sep = "")
- 
-     # create any needed directories
+
+      # create any needed directories
       need_inst_dir <- !dir.exists(file.path("tests"))
       if (need_inst_dir) dir.create("tests")
       need_tt_dir <- !dir.exists(file.path("tests/testthat"))
@@ -78,5 +78,3 @@ roclet_output.roclet_tests <- function(x, results, base_path, ...) {
 
   invisible(NULL)
 }
-
-

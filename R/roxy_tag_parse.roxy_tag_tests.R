@@ -3,7 +3,7 @@
 #'
 #' This function is called once for each \code{@tests} tag in a
 #' function definition file.
-#' 
+#'
 #' @param x A \code{roclet} object.
 #'
 #' @return The \code{x} object is returned, appended with a list \code{val}
@@ -29,7 +29,7 @@ roxy_tag_parse.roxy_tag_tests <- function(x) {
   tests <- sub(valid_frameworks, "", x$raw)
 
   x$val <- list(
-    framework = framework, 
+    framework = framework,
     tests = tests
   )
   x
