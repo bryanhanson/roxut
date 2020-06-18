@@ -9,7 +9,7 @@ Authors@R: c(
            email = "hanson@depauw.edu",
            comment = c(ORCID = "0000-0003-3536-8246"))
            )
-Description: Provides testing infrastructure for the 'roxut' package.  Includes tests for proper functioning with `tinytest` and `testthat` frameworks.
+Description: Provides testing infrastructure for the 'roxut' package.  Includes tests for proper functioning with `tinytest` and `testthat` frameworks.  Package structure is minimal, after processing with 'roxut' additional directories and files will be added.
 License: GPL-3
 Encoding: UTF-8
 Suggests:
