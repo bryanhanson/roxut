@@ -3,6 +3,7 @@
 \docType{package}
 \name{roxut-package}
 \alias{roxut-package}
+\alias{roxut}
 \title{roxut}
 \description{
 Much as \code{roxygen2} allows one to document functions in the same file

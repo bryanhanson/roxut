@@ -8,7 +8,7 @@
 #' \code{tinytest} frameworks.  The \code{roxygen2} package provides much of the infrastructure.
 #'
 #' @name roxut-package
-#'
+#' @aliases roxut
 #' @docType package
 #'
 #' @author Bryan A. Hanson.
