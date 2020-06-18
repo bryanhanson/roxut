@@ -1,15 +1,17 @@
 #'
 #' Process @tests Tags
 #'
-#' @param x A `roclet` object.
+#' Processes the blocks containing the \code{@tests} tags.
 #'
-#' @param blocks A list of [roxy_block] objects.
+#' @param x A \code{roclet} object.
+#'
+#' @param blocks A list of \code{roxy_block} objects.
 #'
 #' @param env Package environment.
 #'
 #' @param base_path Path to root of source package.
 #'
-#' @return A list containing XXX.
+#' @return A list.
 #'
 #' @author Bryan A. Hanson
 #'

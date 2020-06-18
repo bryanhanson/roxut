@@ -1,16 +1,20 @@
 #'
 #' Write the Results of Processing @tests Tags to Unit Test File
 #'
-#' @param x A `roclet` object.
+#' The contents of the unit tests (lines following the \code{@tests} tags)
+#' are written verbatim to the appropriate directories (directory depends
+#' on whether \code{tinytest} or \code{testthat} is in use).
 #'
-#' @param results Value returned from the `roclet_process()` method.
+#' @param x A \code{roclet} object.
+#'
+#' @param results Value returned from the \code{roclet_process()} method.
 #'
 #' @param base_path Path to root of source package.
 #'
 #' @param ... Other arguments passed downstream. Needed for compatibility,
 #'        does not appear to be used.
 #'
-#' @return `NULL`
+#' @return NULL
 #'
 #' @author Bryan A. Hanson
 #'

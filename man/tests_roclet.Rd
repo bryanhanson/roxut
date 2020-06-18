@@ -7,11 +7,11 @@
 tests_roclet()
 }
 \value{
-XXX
+A complete roclet.
 }
 \description{
-This roclet automates the creation of unit tests, using `@tests` tags
-written in the `*.R` function definition files, and processed using `roxygen2`.
+This roclet automates the creation of unit tests, using \code{@tests} tags
+written in the function definition files, and processed using \code{roxygen2}.
 The unit tests are written verbatim to the appropriate destination file.
 }
 \author{

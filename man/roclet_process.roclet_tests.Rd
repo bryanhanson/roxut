@@ -7,19 +7,19 @@
 \method{roclet_process}{roclet_tests}(x, blocks, env, base_path)
 }
 \arguments{
-\item{x}{A `roclet` object.}
+\item{x}{A \code{roclet} object.}
 
-\item{blocks}{A list of [roxy_block] objects.}
+\item{blocks}{A list of \code{roxy_block} objects.}
 
 \item{env}{Package environment.}
 
 \item{base_path}{Path to root of source package.}
 }
 \value{
-A list containing XXX.
+A list.
 }
 \description{
-Process @tests Tags
+Processes the blocks containing the \code{@tests} tags.
 }
 \author{
 Bryan A. Hanson

@@ -7,20 +7,19 @@
 \method{roclet_output}{roclet_tests}(x, results, base_path, ...)
 }
 \arguments{
-\item{x}{A `roclet` object.}
+\item{x}{A \code{roclet} object.}
 
-\item{results}{Value returned from the `roclet_process()` method.}
+\item{results}{Value returned from the \code{roclet_process()} method.}
 
 \item{base_path}{Path to root of source package.}
 
 \item{...}{Other arguments passed downstream. Needed for compatibility,
 does not appear to be used.}
 }
-\value{
-`NULL`
-}
 \description{
-Write the Results of Processing @tests Tags to Unit Test File
+The contents of the unit tests (lines following the \code{@tests} tags)
+are written verbatim to the appropriate directories (directory depends
+on whether \code{tinytest} or \code{testthat} is in use).
 }
 \author{
 Bryan A. Hanson

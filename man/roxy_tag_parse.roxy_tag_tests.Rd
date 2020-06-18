@@ -7,19 +7,19 @@
 \method{roxy_tag_parse}{roxy_tag_tests}(x)
 }
 \arguments{
-\item{x}{A `roclet` object.}
+\item{x}{A \code{roclet} object.}
 }
 \value{
-The `x` object is returned, appended with a list `val`
+The \code{x} object is returned, appended with a list \code{val}
        containing two elements:
 \itemize{
-  \item `framework` containing the name of the unit test framework in use.
-  \item `tests`containing the content of the unit tests.
+  \item \code{framework} containing the name of the unit test framework in use.
+  \item \code{tests} containing the content of the unit tests.
 }
 }
 \description{
-The `roxygen2` infrastructure is used to parse the `@tests` tags.
-This function is called once for each tag in a `*.R` file.
+This function is called once for each \code{@tests} tag in a
+function definition file.
 }
 \author{
 Bryan A. Hanson
