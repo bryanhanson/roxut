@@ -1,7 +1,7 @@
 #'
 #' roxut
 #'
-#' Much as '\code{roxygen2} allows one to document functions in the same file
+#' Much as \code{roxygen2} allows one to document functions in the same file
 #' as the function itself, \code{roxut} allows one to write the unit tests
 #' in the same file as the function.  Once processed, the unit tests are
 #' moved to the appropriate directory.  Currently supports \code{testthat} and
