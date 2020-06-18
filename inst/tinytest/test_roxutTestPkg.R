@@ -49,6 +49,18 @@ out <- tryCatch(
     message("\n\n>>> Building & checking roxutTestPkg")
     system2(localR, "CMD build roxutTestPkg")
     system2(localR, "CMD check roxutTestPkg_0.1.tar.gz")
+
+    # Step 4. Check the output file for errors
+    problem <- FALSE
+    setwd("../..")
+    setwd("tests")
+    lines <- readLines("tinytest.Rout") # reading from an open file!
+    if (any(grepl("There.*roxutTestPkg", lines))) problem <- TRUE
+    if (!problem) message("tinytest.Rout is clean/no errors")
+    if (problem) {
+      message("tinytest.Rout has an error")
+      stop("Encountered a problem while running test_roxutTestPkg.R")
+    }
   },
 
   error = function(cond) {
