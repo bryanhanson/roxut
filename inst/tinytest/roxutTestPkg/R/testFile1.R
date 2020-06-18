@@ -13,18 +13,18 @@
 #' res <- testFunc1(3, 5)
 #'
 #' @tests testthat
-#' # comment 1
+#' # testthat tests group 1
 #' expect_true(testFunc1(1, 1) == 2.0)
 #' expect_true(testFunc1(1.5, 0.25) == 1.75)
 #' 
 #' @tests tinytest
-#' # comment 2
+#' # tinytest tests
 #' expect_true(testFunc1(1, 1) == 2.0)
 #' expect_true(testFunc1(1.5, 0.25) == 1.75)
 #' expect_false(is.na(testFunc1(1.5, 0.25)))
 #' 
 #' @tests testthat
-#' # comment 3
+#' # testthat tests group 2
 #' expect_false(testFunc1(1, 1) == 5)
 #' expect_false(is.na(testFunc1(1.5, 0.25)))
 #' 

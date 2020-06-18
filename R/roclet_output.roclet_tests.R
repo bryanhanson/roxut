@@ -25,7 +25,7 @@ roclet_output.roclet_tests <- function(x, results, base_path, ...) {
 
   # helper function
   writeUT <- function(tests, con) {
-    tests <- c("# File created by roxut; edit the function definition file, not this file\n", tests)
+    tests <- paste0("# File created by roxut; edit the function definition file, not this file\n", tests)
     writeLines(tests, con, sep = "") # \n already present
     message("Writing ", con)
   }
@@ -40,7 +40,8 @@ roclet_output.roclet_tests <- function(x, results, base_path, ...) {
     if (length(fn) > 1) stop("More than one file name is present")
 
     # extract the test contents
-    tests <- sub(".*\\](.*)", "\\1", results[[framework]])
+
+    tests <- sub("(\\[.*\\.R:[0-9]+\\])(.*)", "\\2", results[[framework]])
 
     # collapse tests if more than one present
     tests <- paste0(tests, collapse = "\n")
