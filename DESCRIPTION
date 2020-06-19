@@ -1,7 +1,7 @@
 Package: roxut
 Type: Package
 Title: Document Unit Tests Roxygen-Style
-Version: 0.1.116
+Version: 0.2.0
 Date: 2020-06-18
 Authors@R: c(
       person("Bryan A.", "Hanson",
