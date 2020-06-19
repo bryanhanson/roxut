@@ -22,10 +22,11 @@ If you use `@some_other_branch` you can download other branches that might be av
 To use `roxut`, write your unit tests in the function definition file, much as you would write your examples:
 
 ```r
-[stuff like @export]
+... snip: documentation using tags
 @tests tinytest (or testthat)
-[insert unit test statements]
-[more stuff like @examples]
+expect_equal(blah blah blah)
+expect_true(blah blah blah)
+... snip: more documentation using tags
 ```
 
 You will also need to put a driver script in the appropriate directory.  For example `tinytest` requires `...PkgName/tests/tinytest.R` and `testthat` requires `...PkgName/tests/unittest.R`.  See the corresponding package documentation for details.
