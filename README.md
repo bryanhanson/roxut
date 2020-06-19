@@ -12,7 +12,6 @@ install.packages("remotes")
 library("remotes")
 install_github(repo = "bryanhanson/roxut@master")
 library("roxut")
-?roxut # to get started
 ````
 
 If you use `@some_other_branch` you can download other branches that might be available.  They may or may not pass CRAN checks and thus may not install automatically using the method above.  Check the NEWS file to see what's up.
