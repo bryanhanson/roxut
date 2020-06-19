@@ -17,6 +17,27 @@ library("roxut")
 
 If you use `@some_other_branch` you can download other branches that might be available.  They may or may not pass CRAN checks and thus may not install automatically using the method above.  Check the NEWS file to see what's up.
 
+### Using `roxut`
+
+To use `roxut`, write your unit tests in the function definition file, much as you would write your examples:
+
+```r
+[stuff like @export]
+@tests tinytest (or testthat)
+[insert unit test statements]
+[more stuff like @examples]
+```
+
+You will also need to put a driver script in the appropriate directory.  For example `tinytest` requires `...PkgName/tests/tinytest.R` and `testthat` requires `...PkgName/tests/unittest.R`.  See the corresponding package documentation for details.
+
+Finally, to run `roxut` set the working directory to the root of the package and do:
+
+```r
+roxygenize(roclets = c("rd", "collate", "namespace", "tests_roclet"))
+```
+
+You can also run specific roclets if you don't want them all.  When you `roxygenize`, the contents of the `@tests` block are copied to the necessary directory.
+
 ### Developers/Contributors/Testers
 
 `tinytest` is used to perform unit tests of `roxut`.  In this case, there is a test package at `roxut/inst/tinytest/roxutTestPkg`.  When `roxut` is checked, this test package is used for testing `roxut`, and it is also built, checked and installed to verify everything worked.
