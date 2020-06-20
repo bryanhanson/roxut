@@ -38,6 +38,7 @@ You can have any other files you like in the directory holding the unit tests, s
 To run `roxut` set the working directory to the root of the package and do:
 
 ```r
+library("roxut")
 roxygenize(roclets = c("rd", "collate", "namespace", "tests_roclet"))
 ```
 
