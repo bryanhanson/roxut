@@ -23,6 +23,8 @@
 
 roclet_output.roclet_tests <- function(x, results, base_path, ...) {
 
+  # This is vectorized over results (and thus fn, tests)
+
   # helper function
   writeUT <- function(tests, con) {
     tests <- paste0("# File created by roxut; edit the function definition file, not this file\n", tests)
@@ -32,24 +34,14 @@ roclet_output.roclet_tests <- function(x, results, base_path, ...) {
 
   for (framework in names(results)) {
 
-    # extract the original short filename
-    fn <- sub("\\[.*/(.*)\\.R:[0-9]+\\].*", "\\1", results[[framework]])
-
-    # ensure filename is unique
-    fn <- unique(fn)
-    if (length(fn) > 1) stop("More than one file name is present")
+    # extract the original short filenames
+    fn <- sub("\\[(.*\\.R):[0-9]+\\](.*)", "\\1", results[[framework]])
+    fn <- basename(fn)
 
     # extract the test contents
-
     tests <- sub("(\\[.*\\.R:[0-9]+\\])(.*)", "\\2", results[[framework]])
 
-    # collapse tests if more than one present
-    tests <- paste0(tests, collapse = "\n")
-
     if (framework == "tinytest") {
-
-      # create output filename
-      out_file <- paste("inst/tinytest/test_", fn, ".R", sep = "")
 
       # create any needed directories
       need_inst_dir <- !dir.exists(file.path("inst"))
@@ -57,14 +49,15 @@ roclet_output.roclet_tests <- function(x, results, base_path, ...) {
       need_tt_dir <- !dir.exists(file.path("inst/tinytest"))
       if (need_tt_dir) dir.create("inst/tinytest")
 
-      # write to file and close
-      writeUT(tests, out_file)
+      # write out unit test files
+      for (i in 1:length(fn)) {
+        out_file <- paste0("inst/tinytest/test_", fn[i])
+        writeUT(tests[i], out_file)
+      }
+
     }
 
     if (framework == "testthat") {
-
-      # create output filename
-      out_file <- paste("tests/testthat/test_", fn, ".R", sep = "")
 
       # create any needed directories
       need_inst_dir <- !dir.exists(file.path("tests"))
@@ -72,10 +65,15 @@ roclet_output.roclet_tests <- function(x, results, base_path, ...) {
       need_tt_dir <- !dir.exists(file.path("tests/testthat"))
       if (need_tt_dir) dir.create("tests/testthat")
 
-      # write to file and close
-      writeUT(tests, out_file)
+      # write out unit test files
+      for (i in 1:length(fn)) {
+        out_file <- paste0("tests/testthat/test_", fn[i])
+        writeUT(tests[i], out_file)
+      }
+
     }
-  }
+
+  } # end of master loop
 
   invisible(NULL)
 }

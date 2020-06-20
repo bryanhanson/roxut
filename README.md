@@ -18,17 +18,20 @@ If you use `@some_other_branch` you can download other branches that might be av
 
 ### Using `roxut`
 
-To use `roxut`, write your unit tests in the function definition file, much as you would write your examples:
+To use `roxut`, write your unit tests in the function definition file, much as you would write your examples and other `roxygen2` tags:
 
 ```r
-... snip: documentation using tags
-@tests tinytest (or testthat)
-expect_equal(blah blah blah)
-expect_true(blah blah blah)
-... snip: more documentation using tags
+#' ... snip: documentation using tags
+#' @tests tinytest (or testthat)
+#' expect_equal(blah blah blah)
+#' expect_true(blah blah blah)
+#' ... snip: more documentation using tags
+test <- function() {something}
 ```
 
-You will also need to put a driver script in the appropriate directory.  For example `tinytest` requires `...PkgName/tests/tinytest.R` and `testthat` requires `...PkgName/tests/unittest.R`.  See the corresponding package documentation for details.
+You will also need to put a driver script in the appropriate directory.  For example `tinytest` requires `...PkgName/tests/tinytest.R` and `testthat` requires `...PkgName/tests/unittest.R`.  See the corresponding package documentation for details about the necessary files.
+
+You can have any other files you like in the directory holding the unit tests, such as files that generate test data.  When `roxut` reads a file called `myFunction.R` containing `@tests` tags, it creates a file called `test_myFunction.R` in the directory containing the unit tests.  *This file is overwritten each time you run `roxut`.*  You can use both `roxut` and manually written dedicated unit test files simultaneously, as long as the manually written files avoid using the names used by `roxut`.
 
 Finally, to run `roxut` set the working directory to the root of the package and do:
 
@@ -36,7 +39,7 @@ Finally, to run `roxut` set the working directory to the root of the package and
 roxygenize(roclets = c("rd", "collate", "namespace", "tests_roclet"))
 ```
 
-You can also run specific roclets if you don't want them all.  When you `roxygenize`, the contents of the `@tests` block are copied to the necessary directory.
+You can also run specific roclets if you don't want them all.  When you `roxygenize`, the contents of the `@tests` block are copied to files in the necessary directory.
 
 ### Developers/Contributors/Testers
 

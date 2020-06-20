@@ -1,8 +1,8 @@
 #'
-#' Test File #1
+#' Test File #1 (testFunc1)
 #'
 #' This test file serves as a demonstration of the `@tests` tag infrastructure.
-#' It contains multiple `@tests` blocks and uses both `tinytest` and `testthat`.
+#' It uses both `tinytest` and `testthat`.
 #'
 #' @param x Integer or real.
 #' @param y Integer or real.
@@ -13,7 +13,7 @@
 #' res <- testFunc1(3, 5)
 #'
 #' @tests testthat
-#' # testthat tests group 1
+#' # testthat tests
 #' expect_true(testFunc1(1, 1) == 2.0)
 #' expect_true(testFunc1(1.5, 0.25) == 1.75)
 #' 
@@ -21,11 +21,6 @@
 #' # tinytest tests
 #' expect_true(testFunc1(1, 1) == 2.0)
 #' expect_true(testFunc1(1.5, 0.25) == 1.75)
-#' expect_false(is.na(testFunc1(1.5, 0.25)))
-#' 
-#' @tests testthat
-#' # testthat tests group 2
-#' expect_false(testFunc1(1, 1) == 5)
 #' expect_false(is.na(testFunc1(1.5, 0.25)))
 #' 
 testFunc1 <- function(x, y) x + y
