@@ -35,13 +35,21 @@ You will also need to put a driver script in the appropriate directory.  For exa
 
 You can have any other files you like in the directory holding the unit tests, such as files that generate test data, or manually created unit test files.  When `roxut` reads a file called `myFunction.R` containing `@tests` tags, it creates a file called `test_myFunction.R` in the directory containing the unit tests.  *This file is overwritten each time you run `roxut` if it was previously created by `roxut`* (this is the same behavior as `roxygen2` on `*.Rd` files).  You can use both `roxut` and manually created, dedicated unit test files simultaneously, as long as the manually created files avoid using the names used by `roxut`.
 
-Finally, to run `roxut` set the working directory to the root of the package and do:
+To run `roxut` set the working directory to the root of the package and do:
 
 ```r
 roxygenize(roclets = c("rd", "collate", "namespace", "tests_roclet"))
 ```
 
-You can also run specific roclets if you don't want them all.  When you `roxygenize`, the contents of the `@tests` block are copied to files in the necessary directory.
+You can also run specific roclets if you don't want them all.  When you `roxygenize`, the contents of the `@tests` block are copied to files in the necessary directory.  You can also use `document()` in place of `roxygenize()`.
+
+Depending upon your workflow, an alternative is to put the following line in your `DESCRIPTION` file:
+
+```
+Roxygen: list(packages = "roxut", roclets = c("collate", "namespace", "rd", "roxut::tests_roclet"))
+```
+
+and then if you build and check via a `make` file or similar steps when `roxygenize()` or `document()` is called the `tests_roclet` will automatically be applied.  Good stuff from the developers of `roxygen2`!
 
 ### Developers/Contributors/Testers
 
