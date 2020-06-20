@@ -33,7 +33,7 @@ BugReports: https://github.com/bryanhanson/roxut/issues
 License: GPL-3
 Encoding: UTF-8
 Depends:
-    roxygen2
+    roxygen2 (>= 7.1)
 Suggests:
     tinytest,
     testthat
