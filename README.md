@@ -42,7 +42,7 @@ library("roxut")
 roxygenize(roclets = c("rd", "collate", "namespace", "tests_roclet"))
 ```
 
-You can also run specific roclets if you don't want them all.  When you `roxygenize`, the contents of the `@tests` block are copied to files in the necessary directory.  You can also use `document()` in place of `roxygenize()`.
+You can also run specific roclets if you don't want them all.  When you `roxygenize()`, the contents of the `@tests` block are copied to files in the necessary directory.  You can also use `document()` in place of `roxygenize()`.
 
 Depending upon your workflow, an alternative is to put the following line in your `DESCRIPTION` file:
 
@@ -54,7 +54,7 @@ and then if you build and check via a `make` file or similar steps when `roxygen
 
 ### Developers/Contributors/Testers
 
-`tinytest` is used to perform unit tests of `roxut`.  In this case, there is a test package at `roxut/inst/tinytest/roxutTestPkg`.  When `roxut` is checked, this test package is used for testing `roxut`, and it is also built, checked and installed to verify everything worked.
+`tinytest` is used to perform unit tests of `roxut`.  In this case, there is a test package at `roxut/inst/tinytest/roxutTestPkg`.  When `roxut` is checked, this test package is used for testing `roxut`, and it is also built and checked to verify everything worked.  The process is controlled by `roxut/inst/tinytest/test_roxutTestPkg.R`; have a look!
 
 ### License Information
 
