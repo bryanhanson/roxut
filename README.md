@@ -24,7 +24,7 @@ To use `roxut`, write your unit tests in the function definition file, much as y
 
 ```r
 #' ... snip: documentation using tags
-#' @tests tinytest (or testthat)
+#' @tests tinytest # or testthat
 #' expect_equal(blah blah blah)
 #' expect_true(blah blah blah)
 #' ... snip: more documentation using tags
@@ -33,7 +33,7 @@ test <- function() {something}
 
 You will also need to put a driver script in the appropriate directory.  For example `tinytest` requires `...PkgName/tests/tinytest.R` and `testthat` requires `...PkgName/tests/unittest.R`.  See the corresponding package documentation for details about the necessary files.
 
-You can have any other files you like in the directory holding the unit tests, such as files that generate test data.  When `roxut` reads a file called `myFunction.R` containing `@tests` tags, it creates a file called `test_myFunction.R` in the directory containing the unit tests.  *This file is overwritten each time you run `roxut`.*  You can use both `roxut` and manually written dedicated unit test files simultaneously, as long as the manually written files avoid using the names used by `roxut`.
+You can have any other files you like in the directory holding the unit tests, such as files that generate test data, or manually created unit test files.  When `roxut` reads a file called `myFunction.R` containing `@tests` tags, it creates a file called `test_myFunction.R` in the directory containing the unit tests.  *This file is overwritten each time you run `roxut` if it was previously created by `roxut`* (this is the same behavior as `roxygen2` on `*.Rd` files).  You can use both `roxut` and manually created, dedicated unit test files simultaneously, as long as the manually created files avoid using the names used by `roxut`.
 
 Finally, to run `roxut` set the working directory to the root of the package and do:
 

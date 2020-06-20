@@ -1,8 +1,8 @@
 Package: roxut
 Type: Package
 Title: Document Unit Tests Roxygen-Style
-Version: 0.2.14
-Date: 2020-06-19
+Version: 0.2.15
+Date: 2020-06-20
 Authors@R: c(
       person("Bryan A.", "Hanson",
            role = c("aut", "cre"),

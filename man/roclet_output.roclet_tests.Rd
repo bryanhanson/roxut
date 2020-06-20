@@ -16,6 +16,9 @@
 \item{...}{Other arguments passed downstream. Needed for compatibility,
 does not appear to be used.}
 }
+\value{
+NULL Writes files!
+}
 \description{
 The contents of the unit tests (lines following the \code{@tests} tags)
 are written verbatim to the appropriate directories (directory depends

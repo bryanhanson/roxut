@@ -14,7 +14,7 @@
 #' @param ... Other arguments passed downstream. Needed for compatibility,
 #'        does not appear to be used.
 #'
-#' @return NULL
+#' @return NULL Writes files!
 #'
 #' @author Bryan A. Hanson
 #'
@@ -25,12 +25,29 @@ roclet_output.roclet_tests <- function(x, results, base_path, ...) {
 
   # This is vectorized over results (and thus fn, tests)
 
-  # helper function
+  # helper functions
   writeUT <- function(tests, con) {
-    tests <- paste0("# File created by roxut; edit the function definition file, not this file\n", tests)
-    writeLines(tests, con, sep = "") # \n already present
-    message("Writing ", con)
+    if (roxutFile(con)) {
+      tests <- paste0("# File created by roxut; edit the function definition file, not this file\n", tests)
+      writeLines(tests, con, sep = "") # \n already present
+      message("Writing ", con)
+    }
   }
+
+  roxutFile <- function(con) {
+    rf <- TRUE
+    fileExists <- file.exists(con)
+    if (fileExists) {
+      line1 <- readLines(con, n = 1L)
+      if (!grepl("# File created by roxut;", line1)) {
+        warning("File ", con, " already exists and was not created by roxut, skipping")
+        rf <- FALSE
+      }
+    }
+    return(rf)
+  }
+
+  # main function
 
   for (framework in names(results)) {
 
