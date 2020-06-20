@@ -37,5 +37,4 @@ Depends:
 Suggests:
     tinytest,
     testthat
-Roxygen: list(packages = "roxut", roclets = c("collate", "namespace", "rd", "roxut::tests_roclet"))
 RoxygenNote: 7.1.0
