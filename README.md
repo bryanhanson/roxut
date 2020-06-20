@@ -5,6 +5,8 @@
 
 Much as `roxygen2` allows one to document functions in the same file as the function itself, `roxut`  allows one to write the unit tests in the same file as the function.  Once processed, the unit tests are moved to the appropriate directory.  Currently supports `testthat` and `tinytest` frameworks.  Relies on and extends the `roxygen2` system.
 
+Full Disclosure: Mikkel Meyer Andersen had this idea already, back in July 2019!  His [roxytest](https://cran.r-project.org/package=roxytest) package takes care of unit tests in a manner similar to `roxut` and also includes some additional useful roclets.  Note to self: look around more fully before starting a new package!
+
 ### Installing `roxut` from Github:
 
 ````r
