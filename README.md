@@ -44,7 +44,7 @@ roxygenize(roclets = c("rd", "collate", "namespace", "tests_roclet"))
 
 You can also run specific roclets if you don't want them all.  When you `roxygenize()`, the contents of the `@tests` block are copied to files in the necessary directory.  You can also use `document()` in place of `roxygenize()`.
 
-Depending upon your workflow, an alternative is to put the following line in your `DESCRIPTION` file:
+If you are writing a package, you can put the following line in your `DESCRIPTION` file:
 
 ```
 Roxygen: list(packages = "roxut", roclets = c("collate", "namespace", "rd", "roxut::tests_roclet"))

@@ -17,7 +17,7 @@
 does not appear to be used.}
 }
 \value{
-NULL Writes files!
+Invisibly, a list with the text of the tests. Writes files!
 }
 \description{
 The contents of the unit tests (lines following the \code{@tests} tags)

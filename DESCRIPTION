@@ -1,8 +1,8 @@
 Package: roxut
 Type: Package
 Title: Document Unit Tests Roxygen-Style
-Version: 0.2.18
-Date: 2020-06-20
+Version: 0.2.23
+Date: 2020-07-04
 Authors@R: c(
       person("Bryan A.", "Hanson",
            role = c("aut", "cre"),
@@ -37,4 +37,4 @@ Depends:
 Suggests:
     tinytest,
     testthat
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1

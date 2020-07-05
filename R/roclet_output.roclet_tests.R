@@ -14,7 +14,7 @@
 #' @param ... Other arguments passed downstream. Needed for compatibility,
 #'        does not appear to be used.
 #'
-#' @return NULL Writes files!
+#' @return Invisibly, a list with the text of the tests. Writes files!
 #'
 #' @author Bryan A. Hanson
 #'
@@ -92,5 +92,5 @@ roclet_output.roclet_tests <- function(x, results, base_path, ...) {
 
   } # end of master loop
 
-  invisible(NULL)
+  invisible(tests)
 }
