@@ -55,26 +55,41 @@ out <- tryCatch(
     # See WRE sec 1.6 for the need to call R this (safe) way
     rhome <- Sys.getenv("R_HOME")
     localR <- paste(rhome, "bin", "R", sep = "/")
-    setwd("..") # move up for the next actions
+    Sys.setenv("_R_CHECK_CRAN_INCOMING_" = "FALSE") # saves a little time
+    setwd("..") # move up for the next actions (into the tempdir)
 
     message("\n>>> Building & checking roxutTestPkg\n")
 
-    system2(localR, "CMD build roxutTestPkg")
-    system2(localR, "CMD check roxutTestPkg_0.1.tar.gz")
+    system2(localR, "--vanilla CMD build roxutTestPkg", wait = TRUE)
+    tar.gz <- list.files(pattern = "\\.tar\\.gz")
+    args <- paste("--vanilla CMD check --no-manual", tar.gz, sep = " ")
+    system2(localR, args, wait = TRUE)
 
     # Step 4. Check the output file for errors
 
     message("\n>>> Final inspection for problems\n")
 
+    # Inspect the check log
     problem <- FALSE
-    setwd("roxutTestPkg.Rcheck/tests")
-    lines <- readLines("tinytest.Rout") # reading from an open file!
-    if (any(grepl("There.*roxutTestPkg", lines))) problem <- TRUE
-    if (!problem) message("tinytest.Rout is clean/no errors")
+    check_log <- "roxutTestPkg.Rcheck/00check.log"
+    lines <- readLines(check_log)
+    if (any(grepl("WARNING", lines))) problem <- TRUE
+    if (!problem) message("00check.log was clean/no WARNINGs")
+    # Capture the output if there is a problem because the tempdir is deleted when this script terminates
     if (problem) {
-      message("tinytest.Rout has an error")
-      stop("Encountered a problem while running test_roxutTestPkg.R")
+      stash_it_here <- paste(cur_dir, "roxutTstPkg_00check.log", sep = "/")
+      system2("cp", paste(check_log, stash_it_here))
+      msg <- paste("There was a problem during the check process. See\n", stash_it_here)
+      message(msg)
+      msg <- paste("Also see roxut.Rcheck/tests/tinytest.Rout")
+      message(msg)
+     stop("Encountered a problem while running test_roxutTestPkg.R")
     }
+
+    # Note: in earlier versions we also inspected tinytest.Rout
+    # However, this file has to be inspected while it is open for writing,
+    # and it appears that we can't inspect the contents in real time.
+    # But, as per the message above, we can check it after the fact.
   },
 
   error = function(cond) {
