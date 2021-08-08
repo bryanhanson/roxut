@@ -22,7 +22,9 @@ Invisibly, a list with the text of the tests. Writes files!
 \description{
 The contents of the unit tests (lines following the \code{@tests} tags)
 are written verbatim to the appropriate directories (directory depends
-on whether \code{tinytest} or \code{testthat} is in use).
+on whether \code{tinytest} or \code{testthat} is in use).  If there is more
+than one function and corresponding unit tests in a file, the first unit tests
+will be in \code{filename.R}, the second in \code{filename-1.R} etc.
 }
 \author{
 Bryan A. Hanson
