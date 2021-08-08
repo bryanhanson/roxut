@@ -52,7 +52,7 @@ out <- tryCatch(
     # The following is great for troubleshooting; it's the only way to see the processed
     # test package.  BE CERTAIN TO COMMENT OUT BEFORE GOING TO CRAN
 
-    system2("cp", "-r . ~/Desktop/tempdir") # good for troubleshooting
+    # system2("cp", "-r . ~/Desktop/tempdir") # good for troubleshooting
 
     # Step 3. Build and check package
     # See WRE sec 1.6 for the need to call R this (safe) way

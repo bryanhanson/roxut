@@ -1,13 +1,14 @@
 Package: roxut
 Type: Package
 Title: Document Unit Tests Roxygen-Style
-Version: 0.2.45
+Version: 0.3.0
 Date: 2021-08-08
 Authors@R: c(
       person("Bryan A.", "Hanson",
            role = c("aut", "cre"),
            email = "hanson@depauw.edu",
            comment = c(ORCID = "0000-0003-3536-8246")),
+      person("Claudia", "Beleites", role = "ctb"),
       person(given = "Hadley",
              family = "Wickham",
              role = c("aut", "cph"),
