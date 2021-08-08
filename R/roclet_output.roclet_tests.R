@@ -54,6 +54,10 @@ roclet_output.roclet_tests <- function(x, results, base_path, ...) {
     # extract the original short filenames
     fn <- sub("\\[(.*\\.R):[0-9]+\\](.*)", "\\1", results[[framework]])
     fn <- basename(fn)
+    fn <- file_path_sans_ext(fn)
+    fn <- make.unique(fn, "-") # needed in case there are multiple functions and UTs in one file
+    fn <- paste0(fn, ".R")
+
 
     # extract the test contents
     tests <- sub("(\\[.*\\.R:[0-9]+\\])(.*)", "\\2", results[[framework]])
