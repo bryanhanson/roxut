@@ -74,7 +74,7 @@ roclet_output.roclet_tests <- function(x, results, base_path, ...) {
 
       # write out unit test files
       for (i in 1:length(fn)) {
-        out_file <- paste0("inst/tinytest/test_", fn[i])
+        out_file <- paste0("inst/tinytest/test-", fn[i])
         writeUT(tests[i], out_file)
       }
 
@@ -90,7 +90,7 @@ roclet_output.roclet_tests <- function(x, results, base_path, ...) {
 
       # write out unit test files
       for (i in 1:length(fn)) {
-        out_file <- paste0("tests/testthat/test_", fn[i])
+        out_file <- paste0("tests/testthat/test-", fn[i])
         writeUT(tests[i], out_file)
       }
 
