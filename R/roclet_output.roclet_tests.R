@@ -62,7 +62,10 @@ roclet_output.roclet_tests <- function(x, results, base_path, ...) {
 
 
     # extract the test contents
-    tests <- sub("(\\[.*\\.R:[0-9]+\\])(.*)", "\\2", results[[framework]])
+    # next line is simply the tests
+    # tests <- sub("(\\[.*\\.R:[0-9]+\\])(.*)", "\\2", results[[framework]])
+    # next line gets the tests and the line number where the test begins in the file (thx to CB)
+    tests <- sub("\\[.*/([^/]+\\.R:[0-9]+)\\](.*)", "\n# test found in \\1 (file:line)\n\\2", results[[framework]])
 
     if (framework == "tinytest") {
 
