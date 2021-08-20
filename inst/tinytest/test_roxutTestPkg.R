@@ -32,6 +32,9 @@ out <- tryCatch(
 
     # Step 2. Verify that roxut updated the unit test files in roxutTestPkg
     # When roxygenize() was run above the package roxutTestPkg was loaded.
+    # Note that roxutTestPkg does not have the unit test files, other than
+    # test-testFile3.R which did not originate with roxut and should not 
+    # be touched
 
     message("\n>>> Checking to see if tinytest files were written by roxut or not\n")
 
@@ -54,7 +57,7 @@ out <- tryCatch(
     }
 
     # The following is great for troubleshooting; it's the only way to see the processed
-    # test package.  BE CERTAIN TO COMMENT OUT BEFORE GOING TO CRAN
+    # test package.  BE CERTAIN TO COMMENT OUT BEFORE SUBMITTING TO CRAN
 
     # system2("cp", "-r . ~/Desktop/tempdir") # good for troubleshooting
 
