@@ -9,6 +9,16 @@
 #'
 #' @author Bryan A. Hanson
 #' @export
+#'
+#' @tests tinytest
+#'
+#' # verify that tinytest & testhat output are the same
+#' tinytest_lines <- "#' @tests tinytest\n#' expect_equal(5.0, 5.0)\nNULL\n"
+#' tinytest_out <- roxygen2::roc_proc_text(tests_roclet(), tinytest_lines)
+#' testthat_lines <- "#' @tests testthat\n#' expect_equal(5.0, 5.0)\nNULL\n"
+#' testthat_out <- roxygen2::roc_proc_text(tests_roclet(), testthat_lines)
+#' expect_equivalent(tinytest_out, testthat_out)
+#'
 #' @examples
 #' # In actual use, the test lines would be in your function definition file.
 #' # The results (cat'd here) would be written to the unit test file.
@@ -20,7 +30,7 @@
 #' tinytest_out <- roxygen2::roc_proc_text(tests_roclet(), tinytest_lines)
 #' cat(tinytest_out$tinytest, "\n")
 #' 
-#' testthat_lines <- "#' @tests testthat\n#' expect_true(1 > 0)\nNULL\n"
+#' testthat_lines <- "#' @tests testthat\n#' expect_equal(5.0, 5.0)\nNULL\n"
 #' testthat_out <- roxygen2::roc_proc_text(tests_roclet(), testthat_lines)
 #' cat(testthat_out$testthat, "\n")
 #' 
