@@ -7,3 +7,12 @@ inst/tinytest/roxutTestPkg/Rbuildignore.txt
 .DS_Store
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^CONTRIBUTING\.md$
+^\.github$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^data-raw$
+^codecov\.yml$
+^NEWS\.html$
+^_tmp$
