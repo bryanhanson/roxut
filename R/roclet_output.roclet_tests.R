@@ -53,19 +53,27 @@ roclet_output.roclet_tests <- function(x, results, base_path, ...) {
 
   for (framework in names(results)) {
 
-    # extract the original short filenames
-    fn <- sub("\\[(.*\\.R):[0-9]+\\](.*)", "\\1", results[[framework]])
-    fn <- basename(fn)
+    # extract the test contents, the file name and the line numbers where the test was found
+    pat <- "\\[(.*\\.R):([0-9]+)\\](.*)"
+    file <- sub(pat, "\\1", results[[framework]])
+    line <- sub(pat, "\\2", results[[framework]])
+    tests <- sub(pat, "\\3", results[[framework]])
+
+    # prepare the output file name
+    fn <- basename(file)
     fn <- tools::file_path_sans_ext(fn)
     fn <- make.unique(fn, "-") # needed in case there are multiple functions and UTs in one file
     fn <- paste0(fn, ".R")
 
+    # clean up the file name & add line numbers (basename avoids any platform-dependant issues)
+    file_line <- basename(file)
+    file_line <- paste(file_line, line, sep = ":")
 
-    # extract the test contents
-    # next line is simply the tests
-    # tests <- sub("(\\[.*\\.R:[0-9]+\\])(.*)", "\\2", results[[framework]])
-    # next line gets the tests and the line number where the test begins in the file (thx to CB)
-    tests <- sub("\\[.*/([^/]+\\.R:[0-9]+)\\](.*)", "\n# test found in \\1 (file:line)\n\\2", results[[framework]])
+    # re-assemble with some formating
+    tests <- paste("\n# test found in", file_line, "(file:line)\n", tests)
+
+    
+    #tests <- sub("\\[.*/([^/]+\\.R:[0-9]+)\\](.*)", "\n# test found in \\1 (file:line)\n\\2", results[[framework]])
 
     if (framework == "tinytest") {
 
