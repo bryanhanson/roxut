@@ -72,9 +72,6 @@ roclet_output.roclet_tests <- function(x, results, base_path, ...) {
     # re-assemble with some formating
     tests <- paste("\n# test found in", file_line, "(file:line)\n", tests)
 
-    
-    #tests <- sub("\\[.*/([^/]+\\.R:[0-9]+)\\](.*)", "\n# test found in \\1 (file:line)\n\\2", results[[framework]])
-
     if (framework == "tinytest") {
 
       # create any needed directories
