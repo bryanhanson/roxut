@@ -1,0 +1,47 @@
+
+# -------------------------------------------------------------------------
+
+template:
+  params:
+    bootswatch: yeti
+    noindex: false
+
+# -------------------------------------------------------------------------
+
+development:
+  mode: auto
+
+# -------------------------------------------------------------------------
+
+authors:
+  Bryan A. Hanson:
+    href: http://academic.depauw.edu/hanson_web/
+
+# -------------------------------------------------------------------------
+
+reference:
+- title: 'Package' # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- contents:
+  - has_keyword("package")
+
+- title: 'Functions' # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  desc: "Functions in package `roxut`."
+- contents:
+  - lacks_concepts(c(
+    "package",
+    "deprecated"
+    ))
+
+# -------------------------------------------------------------------------
+
+figures:
+  dev: grDevices::png
+  dpi: 96
+  dev.args: []
+  fig.ext: png
+  fig.width: 4.854
+  fig.height: 3
+  fig.retina: 2
+  fig.asp: 1.618
+
+# -------------------------------------------------------------------------
