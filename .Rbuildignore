@@ -5,3 +5,5 @@ gitignore.txt
 inst/tinytest/roxutTestPkg/.Rbuildignore
 inst/tinytest/roxutTestPkg/Rbuildignore.txt
 .DS_Store
+^.*\.Rproj$
+^\.Rproj\.user$
