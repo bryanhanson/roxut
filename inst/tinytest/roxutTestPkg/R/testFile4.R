@@ -18,7 +18,7 @@
 #' # testthat tests
 #' expect_true(testFunc4(1, 1) == 2.0)
 #' expect_true(testFunc4(1.5, 0.25) == 1.75)
-#' stop("this error should happen")
+#' expect_false(is.na(testFunc4(1.5, 0.25)))
 #'
 #' @tests tinytest
 #' # tinytest tests
@@ -49,6 +49,7 @@ testFunc4 <- function(x, y) x + y
 #' # testthat tests
 #' expect_true(testFunc5(1, 1) == 2.0)
 #' expect_true(testFunc5(1.5, 0.25) == 1.75)
+#' expect_false(is.na(testFunc5(1.5, 0.25)))
 #'
 #' @tests tinytest
 #' # tinytest tests

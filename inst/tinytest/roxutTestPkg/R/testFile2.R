@@ -20,7 +20,8 @@
 #' 
 #' @tests testthat
 #' # testthat tests
-#' expect_false(testFunc2(1, 1) == 5)
+#' expect_true(testFunc2(1, 1) == 2.0)
+#' expect_true(testFunc2(1.5, 0.25) == 1.75)
 #' expect_false(is.na(testFunc2(1.5, 0.25)))
 #' 
 testFunc2 <- function(x, y) x + y

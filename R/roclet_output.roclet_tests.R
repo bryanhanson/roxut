@@ -70,7 +70,7 @@ roclet_output.roclet_tests <- function(x, results, base_path, ...) {
     file_line <- paste(file_line, line, sep = ":")
 
     # re-assemble with some formating
-    tests <- paste("\n# test found in", file_line, "(file:line)\n", tests)
+    tests <- paste("\n# Test found in", file_line, "(file:line)\n", tests)
 
     if (framework == "tinytest") {
 

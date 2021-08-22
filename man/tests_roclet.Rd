@@ -21,12 +21,12 @@ The unit tests are written verbatim to the appropriate destination file.
 # are written to test-myFunc.R in the appropriate directory
 # (the directory depends on whether your are using tinytest or testthat).
 
-tinytest_lines <- "#' @tests tinytest\n#' expect_equal(5.0, 5.0)\nNULL\n"
-tinytest_out <- roxygen2::roc_proc_text(tests_roclet(), tinytest_lines)
+tinytest_in <- "#' @tests tinytest\n#' # Are these equal?\n#' expect_equal(5.0, 5.0)\nNULL\n"
+tinytest_out <- roxygen2::roc_proc_text(tests_roclet(), tinytest_in)
 cat(tinytest_out$tinytest, "\n")
 
-testthat_lines <- "#' @tests testthat\n#' expect_equal(5.0, 5.0)\nNULL\n"
-testthat_out <- roxygen2::roc_proc_text(tests_roclet(), testthat_lines)
+testthat_in <- "#' @tests testthat\n#' # Are these equal?\n#' expect_equal(5.0, 5.0)\nNULL\n"
+testthat_out <- roxygen2::roc_proc_text(tests_roclet(), testthat_in)
 cat(testthat_out$testthat, "\n")
 
 }
