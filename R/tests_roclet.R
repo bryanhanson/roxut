@@ -21,7 +21,7 @@
 #' system2("cp", paste0("-r . ", tst_dir))
 #' setwd(tst_dir)
 #' roxygenize(roclets = "tests_roclet")
-#' system2("cp", "-r . ~/Desktop/tempdir2") # good for troubleshooting DEACTIVATE FOR CRAN
+#' system2("cp", "-r . ~/Desktop/tempdir_UT") # good for troubleshooting DEACTIVATE FOR CRAN
 #'
 #' # Step 1. Get the file names
 #' tinytest_files <- list.files("inst/tinytest", "test-.*\\.R", full.names = TRUE)
