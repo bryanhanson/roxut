@@ -1,3 +1,12 @@
+# roxut 0.4.0 2021-08-22
+
+## Bugs
+* The unit test files were missing a comment marker on Windows (in spite of passing all tests on Win-Builder; reported by Vilmantas Gegzna).
+
+## Improvements
+* Much more robust unit tests were added. See `tests_roclet.R`.
+* Unit test files now have a line giving the location of the unit test in the original file.  Helpful if a `*.R` file contains more than one function with unit tests.  Suggested with initial code by Claudia Beleites (was actually added in the previous version).
+
 # roxut 0.3.23 2021-08-15
 
 ## Bugs

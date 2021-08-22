@@ -41,7 +41,7 @@ test <- function() {do something}
 
 You will also need to put a driver script in the appropriate directory.  For example `tinytest` requires `...PkgName/tests/tinytest.R` and `testthat` requires `...PkgName/tests/unittest.R`.  See the corresponding package documentation for details about the necessary files.
 
-When `roxut` reads a file called `myFunction.R` containing `@tests` tags, it creates a file called `test_myFunction.R` in the directory containing the unit tests.  *This file is overwritten each time you run `roxut` if it was previously created by `roxut`* (this is the same behavior as `roxygen2` on `*.Rd` files).
+When `roxut` reads a file called `myFunction.R` containing `@tests` tags, it creates a file called `test-myFunction.R` in the directory containing the unit tests.  *This file is overwritten each time you run `roxut` if it was previously created by `roxut`* (this is the same behavior as `roxygen2` on `*.Rd` files).
 
 You can use both `roxut` and manually created, dedicated unit test files simultaneously, as long as the manually created files avoid using the file names used by `roxut`. You can also have any other files you like in the directory holding the unit tests, such as files that generate test data.  
 
@@ -57,14 +57,14 @@ You can also run specific roclets if you don't want them all.  When you `roxygen
 If you are writing a package, put the following line in your `DESCRIPTION` file:
 
 ```
-Roxygen: list(packages = "roxut", roclets = c("collate", "namespace", "rd", "roxut::tests_roclet"))
+Roxygen: list(roclets = c("collate", "namespace", "rd", "roxut::tests_roclet"))
 ```
 
 and then if you build and check via a `make` file or similar steps when `roxygenize()` or `document()` is called the `tests_roclet` will automatically be applied.  Good stuff from the developers of `roxygen2`!
 
 ### Developers/Contributors/Testers
 
-`tinytest` is used to perform unit tests of `roxut`.  In this case, there is a test package at `roxut/inst/tinytest/roxutTestPkg`.  When `roxut` is checked, this test package is used for testing `roxut`, and it is also built and checked to verify everything worked.  The process is controlled by `roxut/inst/tinytest/test_roxutTestPkg.R`; have a look!
+`tinytest` is used to perform unit tests of `roxut`.  In this case, there is a test package at `roxut/inst/tinytest/roxutTestPkg`.  When `roxut` is checked, this test package is used for testing `roxut`, and it is also built and checked to verify everything worked.  The process is controlled by `roxut/inst/tinytest/test_roxutTestPkg.R`; have a look!  See also the unit tests in `tests_roclet.R`.
 
 ### License Information
 
