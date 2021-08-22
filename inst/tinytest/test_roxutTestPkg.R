@@ -59,7 +59,7 @@ out <- tryCatch(
     # The following is great for troubleshooting; it's the only way to see the processed
     # test package.  BE CERTAIN TO COMMENT OUT BEFORE SUBMITTING TO CRAN
 
-    # system2("cp", "-r . ~/Desktop/tempdir") # good for troubleshooting
+    # system2("cp", "-r . ~/Desktop/tempdir_roxutTestPkg") # good for troubleshooting
 
     # Step 3. Build and check package
     # See WRE sec 1.6 for the need to call R this (safe) way
@@ -91,12 +91,12 @@ out <- tryCatch(
       system2("cp", paste(check_log, stash_it_here))
       msg <- paste("There was a problem during the check process. See\n", stash_it_here)
       message(msg)
-      msg <- paste("Also see roxut.Rcheck/tests/tinytest.Rout")
+      msg <- paste("\nAlso see roxut.Rcheck/tests/tinytest.Rout")
       message(msg)
-     stop("Encountered a problem while running test_roxutTestPkg.R")
+      stop("Encountered a problem while running test_roxutTestPkg.R")
     }
 
-    # Note: in earlier versions we also inspected tinytest.Rout
+    # Note: in earlier versions we also inspected tinytest.Rout on the fly.
     # However, this file has to be inspected while it is open for writing,
     # and it appears that we can't inspect the contents in real time.
     # But, as per the message above, we can check it after the fact.
