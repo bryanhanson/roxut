@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>/404.html</loc>
+  </url>
+  <url>
+    <loc>/authors.html</loc>
+  </url>
+  <url>
+    <loc>/index.html</loc>
+  </url>
+  <url>
+    <loc>/news/index.html</loc>
+  </url>
+  <url>
+    <loc>/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>/reference/roclet_clean.roclet_tests.html</loc>
+  </url>
+  <url>
+    <loc>/reference/roclet_output.roclet_tests.html</loc>
+  </url>
+  <url>
+    <loc>/reference/roclet_process.roclet_tests.html</loc>
+  </url>
+  <url>
+    <loc>/reference/roxut-package.html</loc>
+  </url>
+  <url>
+    <loc>/reference/roxy_tag_parse.roxy_tag_tests.html</loc>
+  </url>
+  <url>
+    <loc>/reference/tests_roclet.html</loc>
+  </url>
+</urlset>
