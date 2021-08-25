@@ -1,5 +1,13 @@
-
+<!-- badges: start -->
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![CRAN status](https://www.r-pkg.org/badges/version-last-release/roxut)](https://cran.r-project.org/package=roxut)
+[![metacran downloads](https://cranlogs.r-pkg.org/badges/grand-total/roxut)](https://cran.r-project.org/package=roxut)
+[![metacran downloads](https://cranlogs.r-pkg.org/badges/roxut)](https://cran.r-project.org/package=roxut)
+[![R-CMD-check](https://github.com/bryanhanson/roxut/workflows/R-CMD-check/badge.svg)](https://github.com/bryanhanson/roxut/actions)
+![Website (pkgdown)](https://github.com/bryanhanson/roxut/workflows/Website%20(pkgdown)/badge.svg)
+<!-- [![Codecov](https://codecov.io/gh/bryanhanson/roxut/branch/develop/graph/badge.svg)](https://codecov.io/gh/bryanhanson/roxut?branch=develop) -->
+<!-- badges: end -->
+
 
 ## What is `roxut`?
 
