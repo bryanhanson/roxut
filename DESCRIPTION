@@ -1,8 +1,8 @@
 Package: roxut
 Type: Package
 Title: Document Unit Tests Roxygen-Style
-Version: 0.4.0
-Date: 2021-08-22
+Version: 0.4.2
+Date: 2022-11-13
 Authors@R: c(
       person("Bryan A.", "Hanson",
            role = c("aut", "cre"),
@@ -39,4 +39,4 @@ Suggests:
     tinytest,
     testthat
 Roxygen: list(roclets = c("namespace", "rd", "roxut::tests_roclet"))
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.2

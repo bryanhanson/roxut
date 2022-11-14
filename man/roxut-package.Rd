@@ -17,4 +17,5 @@ Bryan A. Hanson.
 
 Maintainer: Bryan A. Hanson \email{hanson@depauw.edu}
 }
+\concept{package}
 \keyword{package}
