@@ -41,6 +41,7 @@ jobs:
       - name: Install other dependencies
         run: |
           install.packages("remotes") # needed here!
+          install.packages("roxut")
           install.packages("roxygen2")
           install.packages("rcmdcheck") # apparently assumed by check-r-package below
           remotes::install_deps(dependencies = TRUE) # all others
