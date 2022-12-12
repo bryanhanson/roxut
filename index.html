@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">roxut</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.4.3</span>
       </span>
     </div>
 
@@ -48,7 +48,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/bryanhanson/roxut/">
+  <a href="https://github.com/bryanhanson/roxut/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -67,60 +67,60 @@
   <div class="contents col-md-9">
 
 
-<div id="what-is-roxut" class="section level2">
-<h2 class="hasAnchor">
-<a href="#what-is-roxut" class="anchor" aria-hidden="true"></a>What is <code>roxut</code>?</h2>
+<div class="section level2">
+<h2 id="what-is-roxut">What is <code>roxut</code>?<a class="anchor" aria-label="anchor" href="#what-is-roxut"></a>
+</h2>
 <p>Much as <code>roxygen2</code> allows one to document functions in the same file as the function itself, <code>roxut</code> allows one to write the unit tests in the same file as the function. Once processed, the unit tests are moved to the appropriate directory. Currently supports <code>testthat</code> and <code>tinytest</code> frameworks. Relies on and extends the <code>roxygen2</code> system.</p>
 <p>Full Disclosure: Mikkel Meyer Andersen had this idea already, back in July 2019! His <a href="https://cran.r-project.org/package=roxytest" class="external-link">roxytest</a> package takes care of unit tests in a manner similar to <code>roxut</code> and also includes some additional useful roclets. Note to self: look around more fully before starting a new package!</p>
-<div id="installing-roxut-from-cran" class="section level3">
-<h3 class="hasAnchor">
-<a href="#installing-roxut-from-cran" class="anchor" aria-hidden="true"></a>Installing <code>roxut</code> from CRAN:</h3>
+<div class="section level3">
+<h3 id="installing-roxut-from-cran">Installing <code>roxut</code> from CRAN:<a class="anchor" aria-label="anchor" href="#installing-roxut-from-cran"></a>
+</h3>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/chooseCRANmirror.html" class="external-link">chooseCRANmirror</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># choose a CRAN mirror</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"roxut"</span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/bryanhanson/roxut" class="external-link">"roxut"</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/chooseCRANmirror.html" class="external-link">chooseCRANmirror</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># choose a CRAN mirror</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"roxut"</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/bryanhanson/roxut" class="external-link">"roxut"</a></span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="installing-roxut-from-github" class="section level3">
-<h3 class="hasAnchor">
-<a href="#installing-roxut-from-github" class="anchor" aria-hidden="true"></a>Installing <code>roxut</code> from Github:</h3>
+<div class="section level3">
+<h3 id="installing-roxut-from-github">Installing <code>roxut</code> from Github:<a class="anchor" aria-label="anchor" href="#installing-roxut-from-github"></a>
+</h3>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://remotes.r-lib.org" class="external-link">"remotes"</a></span><span class="op">)</span>
-<span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span>repo <span class="op">=</span> <span class="st">"bryanhanson/roxut@master"</span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/bryanhanson/roxut" class="external-link">"roxut"</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://remotes.r-lib.org" class="external-link">"remotes"</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span>repo <span class="op">=</span> <span class="st">"bryanhanson/roxut@main"</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/bryanhanson/roxut" class="external-link">"roxut"</a></span><span class="op">)</span></span></code></pre></div>
 <p>If you use <code>@some_other_branch</code> you can download other branches that might be available. They may or may not pass CRAN checks and thus may not install automatically using the method above. Check the NEWS file to see what’s up.</p>
 </div>
-<div id="using-roxut" class="section level3">
-<h3 class="hasAnchor">
-<a href="#using-roxut" class="anchor" aria-hidden="true"></a>Using <code>roxut</code>
+<div class="section level3">
+<h3 id="using-roxut">Using <code>roxut</code>
+<a class="anchor" aria-label="anchor" href="#using-roxut"></a>
 </h3>
 <p>To use <code>roxut</code>, write your unit tests in the function definition file, much as you would write your examples and other <code>roxygen2</code> tags:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co">#' ... snip: documentation using tags</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="co">#' @tests tinytest # or testthat</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="co">#' expect_equal(blah blah blah)</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="co">#' expect_true(blah blah blah)</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="co">#' ... snip: more documentation using tags</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a>test &lt;-<span class="st"> </span><span class="cf">function</span>() {do something}</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#' ... snip: documentation using tags</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#' @tests tinytest # or testthat</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#' expect_equal(blah blah blah)</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#' expect_true(blah blah blah)</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#' ... snip: more documentation using tags</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>test <span class="ot">&lt;-</span> <span class="cf">function</span>() {do something}</span></code></pre></div>
 <p>You will also need to put a driver script in the appropriate directory. For example <code>tinytest</code> requires <code>...PkgName/tests/tinytest.R</code> and <code>testthat</code> requires <code>...PkgName/tests/unittest.R</code>. See the corresponding package documentation for details about the necessary files.</p>
 <p>When <code>roxut</code> reads a file called <code>myFunction.R</code> containing <code>@tests</code> tags, it creates a file called <code>test-myFunction.R</code> in the directory containing the unit tests. <em>This file is overwritten each time you run <code>roxut</code> if it was previously created by <code>roxut</code></em> (this is the same behavior as <code>roxygen2</code> on <code>*.Rd</code> files).</p>
 <p>You can use both <code>roxut</code> and manually created, dedicated unit test files simultaneously, as long as the manually created files avoid using the file names used by <code>roxut</code>. You can also have any other files you like in the directory holding the unit tests, such as files that generate test data.</p>
 <p>To run <code>roxut</code> set the working directory to the root of the package and do:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/bryanhanson/roxut" class="external-link">"roxut"</a></span><span class="op">)</span>
-<span class="fu"><a href="https://roxygen2.r-lib.org/reference/roxygenize.html" class="external-link">roxygenize</a></span><span class="op">(</span>roclets <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"rd"</span>, <span class="st">"collate"</span>, <span class="st">"namespace"</span>, <span class="st">"tests_roclet"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/bryanhanson/roxut" class="external-link">"roxut"</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://roxygen2.r-lib.org/reference/roxygenize.html" class="external-link">roxygenize</a></span><span class="op">(</span>roclets <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"rd"</span>, <span class="st">"collate"</span>, <span class="st">"namespace"</span>, <span class="st">"tests_roclet"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>You can also run specific roclets if you don’t want them all. When you <code><a href="https://roxygen2.r-lib.org/reference/roxygenize.html" class="external-link">roxygenize()</a></code>, the contents of the <code>@tests</code> block are copied to files in the necessary directory. You can also use <code>document()</code> in place of <code><a href="https://roxygen2.r-lib.org/reference/roxygenize.html" class="external-link">roxygenize()</a></code>.</p>
 <p>If you are writing a package, put the following line in your <code>DESCRIPTION</code> file:</p>
-<pre><code>Roxygen: list(roclets = c("collate", "namespace", "rd", "roxut::tests_roclet"))</code></pre>
+<pre><code><span><span class="va">Roxygen</span><span class="op">:</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>roclets <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"collate"</span>, <span class="st">"namespace"</span>, <span class="st">"rd"</span>, <span class="st">"roxut::tests_roclet"</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 <p>and then if you build and check via a <code>make</code> file or similar steps when <code><a href="https://roxygen2.r-lib.org/reference/roxygenize.html" class="external-link">roxygenize()</a></code> or <code>document()</code> is called the <code>tests_roclet</code> will automatically be applied. Good stuff from the developers of <code>roxygen2</code>!</p>
 </div>
-<div id="developerscontributorstesters" class="section level3">
-<h3 class="hasAnchor">
-<a href="#developerscontributorstesters" class="anchor" aria-hidden="true"></a>Developers/Contributors/Testers</h3>
+<div class="section level3">
+<h3 id="developerscontributorstesters">Developers/Contributors/Testers<a class="anchor" aria-label="anchor" href="#developerscontributorstesters"></a>
+</h3>
 <p><code>tinytest</code> is used to perform unit tests of <code>roxut</code>. In this case, there is a test package at <code>roxut/inst/tinytest/roxutTestPkg</code>. When <code>roxut</code> is checked, this test package is used for testing <code>roxut</code>, and it is also built and checked to verify everything worked. The process is controlled by <code>roxut/inst/tinytest/test_roxutTestPkg.R</code>; have a look! See also the unit tests in <code>tests_roclet.R</code>.</p>
 </div>
-<div id="license-information" class="section level3">
-<h3 class="hasAnchor">
-<a href="#license-information" class="anchor" aria-hidden="true"></a>License Information</h3>
+<div class="section level3">
+<h3 id="license-information">License Information<a class="anchor" aria-label="anchor" href="#license-information"></a>
+</h3>
 <p><code>roxut</code> is distributed under the GPL-3 license, as stated in the DESCRIPTION file. For more info, see the <a href="https://gnu.org/licenses/gpl.html" class="external-link">GPL site.</a></p>
 <p>Questions? <a href="mailto:hanson@depauw.edu" class="email">hanson@depauw.edu</a></p>
 </div>
@@ -132,33 +132,36 @@
     <div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=roxut">https://​cloud.r-project.org/​package=roxut</a>
-</li>
-<li>Browse source code at <br><a href="https://github.com/bryanhanson/roxut/">https://​github.com/​bryanhanson/​roxut/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/bryanhanson/roxut/issues">https://​github.com/​bryanhanson/​roxut/​issues</a>
-</li>
+<li><a href="https://cloud.r-project.org/package=roxut" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/bryanhanson/roxut/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/bryanhanson/roxut/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 
 <div class="license">
 <h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
-<li><a href="https://www.r-project.org/Licenses/GPL-3">GPL-3</a></li>
+<li><a href="https://www.r-project.org/Licenses/GPL-3" class="external-link">GPL-3</a></li>
 </ul>
 </div>
 
 
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html#citation">Citing roxut</a></li>
+</ul>
+</div>
+
 <div class="developers">
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li>Bryan A. Hanson <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0003-3536-8246" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li>
-<a href="http://hadley.nz">Hadley Wickham</a> <br><small class="roles"> Author, copyright holder </small>  </li>
+<li>Bryan A. Hanson <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0003-3536-8246" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Hadley Wickham <br><small class="roles"> Author, copyright holder </small>  </li>
 <li>Peter Danenberg <br><small class="roles"> Author, copyright holder </small>  </li>
 <li>Gábor Csárdi <br><small class="roles"> Author </small>  </li>
 <li>Manuel Eugster <br><small class="roles"> Author, copyright holder </small>  </li>
-<li><a href="authors.html">More on authors...</a></li>
+<li><a href="authors.html">More about authors...</a></li>
 </ul>
 </div>
 
@@ -179,12 +182,12 @@
 
       <footer><div class="copyright">
   <p></p>
-<p>Developed by Bryan A. Hanson, <a href="http://hadley.nz" class="external-link">Hadley Wickham</a>, Peter Danenberg, Gábor Csárdi, Manuel Eugster.</p>
+<p>Developed by Bryan A. Hanson, Hadley Wickham, Peter Danenberg, Gábor Csárdi, Manuel Eugster.</p>
 </div>
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer>
