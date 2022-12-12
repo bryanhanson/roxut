@@ -34,8 +34,7 @@ jobs:
           path: ${{ env.R_LIBS_USER }}
           key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
           restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
-
-          # Install pkgs needed for this script
+        # Install pkgs needed for this script
           remotes::install_cran("rcmdcheck")
           remotes::install_cran("roxygen2")
           remotes::install_cran("pkgdown")
