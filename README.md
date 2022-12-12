@@ -28,7 +28,7 @@ library("roxut")
 ````r
 install.packages("remotes")
 library("remotes")
-install_github(repo = "bryanhanson/roxut@master")
+install_github(repo = "bryanhanson/roxut@main")
 library("roxut")
 ````
 

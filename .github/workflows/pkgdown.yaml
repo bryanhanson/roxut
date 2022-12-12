@@ -1,19 +1,24 @@
 on:
   push:
     branches:
-      - master
-      - devel
+      - main
 
-name: Update pkgdown site
+name: Update-Docs
 
 jobs:
   pkgdown:
     runs-on: macOS-latest
+
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+
     steps:
       - uses: actions/checkout@v2
+
       - uses: r-lib/actions/setup-r@master
+        with:
+          r-version: 'release'
+
       - uses: r-lib/actions/setup-pandoc@master
 
       - name: Query dependencies
@@ -30,11 +35,10 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
           restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
 
-      - name: Install dependencies
-        run: |
-          install.packages("roxygen2")
-          remotes::install_dev("pkgdown")
-          remotes::install_github("bryanhanson/roxut", dependencies = TRUE)
+          # Install pkgs needed for this script
+          remotes::install_cran("rcmdcheck")
+          remotes::install_cran("roxygen2")
+          remotes::install_cran("pkgdown")
         shell: Rscript {0}
 
       - name: Roxygenize
@@ -44,7 +48,10 @@ jobs:
 
       - name: Install package
         run: R CMD INSTALL .
+        # working-directory: ./hyperSpec
 
       - name: Deploy package
-        run: pkgdown::deploy_to_branch(new_process = TRUE)
-        shell: Rscript {0}
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          Rscript -e 'pkgdown::deploy_to_branch(new_process = FALSE)'

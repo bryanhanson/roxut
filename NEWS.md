@@ -1,3 +1,7 @@
+# roxut 0.4.3 2022-12-12
+## Misc.
+* Use `main` instead of `master`; modernize CI scripts.  Not on CRAN.
+
 # roxut 0.4.0 2021-08-22
 
 ## Bugs
