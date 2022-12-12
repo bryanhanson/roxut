@@ -38,6 +38,7 @@ jobs:
       - name: Install dependencies
         run: |
           # Install pkgs needed for this script
+          remotes::install_cran("roxut")
           remotes::install_cran("rcmdcheck")
           remotes::install_cran("roxygen2")
           remotes::install_cran("pkgdown")
